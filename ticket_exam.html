@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  window.MathJax = {
+    tex: { 
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      packages: {'[+]': ['ams']}
+    },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<title>Коллоквиум I — билет</title>
+<style>
+  body {font-family: "Times New Roman", serif; max-width: 1100px; margin: 0 auto; padding: 24px; line-height: 1.6}
+  h1 {text-align:center; margin-bottom: 8px}
+  .meta {text-align:center; color:#666; margin-bottom:24px}
+  .section {background:#fff; border:1px solid #eaeaea; border-radius:10px; padding:18px; margin:18px 0; box-shadow:0 2px 8px rgba(0,0,0,.04)}
+  ol {margin-left: 20px; padding-left: 20px}
+  .math {font-family: inherit}
+
+  /* Стили для вопросов и ответов */
+  .question {margin: 15px 0; padding: 15px; border-left: 3px solid #e0e0e0; background: #fafafa}
+  .question-text {font-weight: bold; margin-bottom: 10px}
+  .show-answer-btn {
+    padding: 8px 16px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .show-answer-btn:hover {background: #45a049}
+  .answer {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .answer-content {line-height: 1.5}
+  .answer.show {display: block}
+
+  .closed-question {margin: 20px 0; padding: 20px; background: #f8f9fa; border-radius: 8px}
+
+  .score {background:#f5fbff; border-left:4px solid #1f7ae0; padding:12px; border-radius:8px;}
+  .score-row {display:flex; align-items:center; gap:12px; margin:8px 0}
+  .score-row label {min-width:260px; font-weight:600}
+  input[type=number] {width:90px; padding:6px}
+  .total {font-size:20px; font-weight:700; text-align:center; margin-top:16px; background:#eaf8ea; border:2px solid #4CAF50; border-radius:10px; padding:12px}
+  .timerbar {display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:12px 0}
+  button {padding:10px 14px; border:0; border-radius:8px; background:#4CAF50; color:#fff; cursor:pointer}
+  button.secondary {background:#607D8B}
+  .timer {position:fixed; right:20px; top:20px; background:#f0f0f0; font-weight:700; font-size:36px; padding:16px 20px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,.2)}
+  .urgent {background:#ffcccc; color:#900; animation:pulse 1s infinite}
+  @keyframes pulse {0%{transform:scale(1)} 50%{transform:scale(1.05)} 100%{transform:scale(1)}}
+  .hint {color:#666; font-style:italic; text-align:center; margin-top:8px}
+</style>
+</head>
+<body>
+  <h1>Коллоквиум I — билет</h1>
+  <div class="meta">Дата: 31.10.2025 11:58. Базовый максимум: 8.0 баллов (8). Доп. задача: +1 или +2 по правилам.</div>
+
+  <div class="section">
+    <h2>Таймеры (регламент)</h2>
+    <div class="timerbar">
+      <button onclick="startTimer(40*60)">Подготовка 40 мин</button>
+      <button onclick="startTimer(10*60)">Сдача ассистенту 10 мин</button>
+      <button onclick="startTimer(30*60)">Сдача преподавателю 30 мин</button>
+      <button onclick="startTimer(20*60)">Решение доп. задачи 20 мин</button>
+      <button onclick="startTimer(10*60)">Защита доп. задачи 10 мин</button>
+      <button class="secondary" onclick="resetTimer()">Сброс</button>
+    </div>
+    <div id="timer" class="timer">00:00</div>
+    <div class="hint">Под правила: подготовка — к п.2–3, остальное — согласно описанию коллоквиума.</div>
+  </div>
+
+  
+    <div class="section">
+      <h2>1) Четыре определения (каждое по 0.5)</h2>
+      <ol>
+        <li class="math">
+          
+    <div class="question">
+      <div class="question-text">Что означает термин «внутренняя точка множества»? (определение 4.2).</div>
+      <button class="show-answer-btn" onclick="toggleAnswer('def_1_5050')">
+        Показать ответ
+      </button>
+      <div id="def_1_5050" class="answer">
+        <div class="answer-content">Ответ пока не добавлен</div>
+      </div>
+    </div>
+    
+        </li>
+        
+        <li class="math">
+          
+    <div class="question">
+      <div class="question-text">Что означает термин «предельная точка множества»? (определение 4.2).</div>
+      <button class="show-answer-btn" onclick="toggleAnswer('def_2_8886')">
+        Показать ответ
+      </button>
+      <div id="def_2_8886" class="answer">
+        <div class="answer-content">Ответ пока не добавлен</div>
+      </div>
+    </div>
+    
+        </li>
+        
+        <li class="math">
+          
+    <div class="question">
+      <div class="question-text">Сформулируйте признак Коши (теорема 3.41).</div>
+      <button class="show-answer-btn" onclick="toggleAnswer('def_3_2904')">
+        Показать ответ
+      </button>
+      <div id="def_3_2904" class="answer">
+        <div class="answer-content">Признак Лобачевского–Коши для рядов с положительными членами: если \(\sqrt[n]{a_n}\to q<1\) (или аналогичное условие), то ряд сходится; если \(\limsup\sqrt[n]{a_n}>1\), то расходится.</div>
+      </div>
+    </div>
+    
+        </li>
+        
+        <li class="math">
+          
+    <div class="question">
+      <div class="question-text">Сформулируйте лемму об отделимости для сходящейся числовой последовательности (лемма 3.10).</div>
+      <button class="show-answer-btn" onclick="toggleAnswer('def_4_9091')">
+        Показать ответ
+      </button>
+      <div id="def_4_9091" class="answer">
+        <div class="answer-content">Если a_n→a и a≠0, то ∃N: ∀n>N выполняется |a_n|>|a|/2>0.</div>
+      </div>
+    </div>
+    
+        </li>
+        </ol>
+    </div>
+    
+  
+    <div class="section">
+      <h2>2) Одна теоретическая задача из закрытого пула (1 балл)</h2>
+      
+    <div class="closed-question">
+      
+    <div class="question">
+      <div class="question-text">Теорема Римана (теорема 3.45, без доказательства).</div>
+      <button class="show-answer-btn" onclick="toggleAnswer('closed_9997')">
+        Показать ответ
+      </button>
+      <div id="closed_9997" class="answer">
+        <div class="answer-content">Ответ пока не добавлен</div>
+      </div>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+  
+    <div class="section">
+      <h2>3) Два доказательства (каждое до 2.5)</h2>
+      <ol>
+        <li class="math">
+          
+    <div class="question">
+      <div class="question-text">Теорема Больцано (следствие 3.23). Критерий сходимости последовательности в терминах частичных пределов (теорема 3.24).</div>
+      <button class="show-answer-btn" onclick="toggleAnswer('proof_1_5748')">
+        Показать ответ
+      </button>
+      <div id="proof_1_5748" class="answer">
+        <div class="answer-content">Из всякой ограниченной последовательности можно выделить сходящуюся подпоследовательность. Ограниченная \(\{a_n\}\) сходится ⇔ множество её частичных пределов — одна точка.</div>
+      </div>
+    </div>
+    
+        </li>
+        
+        <li class="math">
+          
+    <div class="question">
+      <div class="question-text">Определения предела функции (по множеству) по Коши (определение 4.6) и по Гейне (определение 4.5), их эквивалентность (теорема 4.10).</div>
+      <button class="show-answer-btn" onclick="toggleAnswer('proof_2_957')">
+        Показать ответ
+      </button>
+      <div id="proof_2_957" class="answer">
+        <div class="answer-content">Коши: \(\forall\varepsilon\,\exists\delta\,\forall x\in D\cap B'_{\delta}(a): |f(x)-A|<\varepsilon\). Гейне: для всякой \(x_n\to a\) (в D\{a}) имеем \(f(x_n)\to A\). Теорема 4.10: определения эквивалентны.</div>
+      </div>
+    </div>
+    
+        </li>
+        </ol>
+    </div>
+    
+
+  <div class="section">
+    <h2>Оценивание</h2>
+    <div class="score">
+      <div class="score-row"><label>Определения (суммарно, 0–2):</label><input id="s_defs" type="number" min="0" max="2" step="0.1" oninput="recalc()"></div>
+      <div class="score-row"><label>Закрытая задача (0–1):</label><input id="s_closed" type="number" min="0" max="1" step="0.1" oninput="recalc()"></div>
+      <div class="score-row"><label>Доказательства (суммарно, 0–5):</label><input id="s_proofs" type="number" min="0" max="5" step="0.1" oninput="recalc()"></div>
+      <div class="score-row"><label>Доп. задача (+0, +1, +2):</label><input id="s_extra" type="number" min="0" max="2" step="1" oninput="recalc()"></div>
+      <div class="hint">Если до 6 баллов — можно +1; если 6.5–8 — можно +1 или +2.</div>
+    </div>
+    <div id="total" class="total">Итог: 0.00 / 8 (+доп до 2)</div>
+  </div>
+
+<script>
+let timerInterval = null;
+let timeLeft = 0;
+
+// Функция для показа/скрытия ответов
+function toggleAnswer(answerId) {
+  const answer = document.getElementById(answerId);
+  const button = answer.previousElementSibling;
+
+  if (answer.classList.contains('show')) {
+    answer.classList.remove('show');
+    button.textContent = 'Показать ответ';
+  } else {
+    answer.classList.add('show');
+    button.textContent = 'Скрыть ответ';
+    // Перерисовываем MathJax для вновь показанного контента
+    MathJax.typesetPromise([answer]).catch(function(err) {
+      console.error('MathJax typeset error:', err);
+    });
+  }
+}
+
+// Функции таймера
+function fmt(sec) {
+  const m = Math.floor(sec/60).toString().padStart(2,'0');
+  const s = (sec%60).toString().padStart(2,'0');
+  return m + ":" + s;
+}
+
+function tick() {
+  const box = document.getElementById('timer');
+  box.textContent = fmt(timeLeft);
+  if (timeLeft <= 60) box.classList.add('urgent'); else box.classList.remove('urgent');
+  if (timeLeft <= 0) { clearInterval(timerInterval); timerInterval = null; return; }
+  timeLeft--;
+}
+
+function startTimer(seconds) {
+  if (timerInterval) clearInterval(timerInterval);
+  timeLeft = seconds;
+  tick();
+  timerInterval = setInterval(tick, 1000);
+}
+
+function resetTimer() {
+  if (timerInterval) clearInterval(timerInterval);
+  timerInterval = null;
+  timeLeft = 0;
+  document.getElementById('timer').textContent = "00:00";
+  document.getElementById('timer').classList.remove('urgent');
+}
+
+function clamp(v, lo, hi) { v = Number(v||0); if (v<lo) return lo; if (v>hi) return hi; return v; }
+
+function recalc() {
+  const s_defs = clamp(document.getElementById('s_defs').value, 0, 2);
+  const s_closed = clamp(document.getElementById('s_closed').value, 0, 1);
+  const s_proofs = clamp(document.getElementById('s_proofs').value, 0, 5);
+  const s_extra = clamp(document.getElementById('s_extra').value, 0, 2);
+  const base = s_defs + s_closed + s_proofs;
+  const total = Math.min(8, base) + s_extra;
+  document.getElementById('total').textContent = `Итог: ${total.toFixed(2)} / 8 (+доп до 2)`;
+}
+</script>
+</body>
+</html>
